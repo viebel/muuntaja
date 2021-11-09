@@ -58,7 +58,7 @@ Easiest way is to add a `:encoder-opts` key to the format with the options map a
     (assoc-in
       muuntaja/default-options
       [:formats "application/json" :encoder-opts]
-      {:key-fn #(.toUpperCase (name %))})))
+      {:encode-key-fn #(.toUpperCase (name %))})))
 
 (slurp (muuntaja/encode m "application/json" {:kikka 42}))
 ;; "{\"KIKKA\":42}"
